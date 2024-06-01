@@ -22,7 +22,7 @@ This is Software-In-The-Loop implemenation of Switched Turn/Trajectory Source lo
     sudo apt-get install ros-noetic-grid-map
     mkdir -p catkin_ws/src
     cd catkin_ws/src
-    git clone ---
+    git clone [---](https://github.com/rogue-bot/Switched-Turn-Trajectory-Source-Localization.git)
     cd ..
     catkin build
     ```
