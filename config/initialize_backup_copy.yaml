@@ -1,0 +1,35 @@
+# mav parameters
+turn_rate: 10.0       # turn rate in deg/sec
+vel: 1          # velocity in m/s
+altitude: 10.0        # altitude of mav
+yaw_ini: 0           # initial yaw deg
+
+# Algorithms parameters
+algo_num: 3           # 1->MTS, 2->GAMTS, 3->GDTS, 4->TRM(yet to be implemented)
+sample_N: 3           # sample of measurements for mts and gamts switching
+dataPts: 100
+del_thresh: 5         # delta angle threshold in deg
+max_time: 250.0
+
+## GAMTS parameters
+b: 0.5                # b parameter for gamts
+theta_l_ini: 90       # initial grad direction in deg
+
+## GDTS parameters
+grad_est: 1        # gradient estimation method 1->LSM, 2->FDM
+
+sin_traj_points: 1000 # number of sin trajectory points
+
+# Sensor parameters
+sensor_rate: 10        # sensor update rate
+filter_N: 5           # Window filter width
+pos_x_s:  50.0        # Source x co-ordinate
+pos_y_s: 50.0          # Source y co-ordinate 
+pos_z_s: 0            # Source x co-ordinate 
+Qmax: 1000.0          # Max vlaue of scalar field
+sx: 75.0
+sy: 100.0
+sz: 10.0
+field_param: 3        # type of field 1 gauss, 2 quad, 3 for arva
+noise_flag: 0         # noise in measurement, 1 for noisy measurement
+window_flag: true     # To use window filter

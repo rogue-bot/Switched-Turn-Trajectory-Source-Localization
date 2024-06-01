@@ -1,0 +1,25 @@
+<launch>
+     
+    <rosparam file="$(find src_loc)/config/initialize.yaml" command="load" />
+<!-- 	
+    <node name="spawn_artva_1" pkg="gazebo_ros" type="spawn_model" args="-param arva_description_1 -urdf -x 20.0 -y 0.0 -z 0.5 -model artva1" 	respawn="false" output="screen">
+	</node> -->
+   
+    <node name="MTS_trej_node" pkg="src_loc" type="MTS_trej_node" output="screen"></node>
+
+    <node name="sensor_node" pkg="src_loc" type="sensor_node" output="screen"></node>
+    <node name="MTS_algo_node" pkg="src_loc" type="MTS_algo_node" output="screen"></node>
+
+    <node pkg="grid_map_visualization" type="grid_map_visualization" name="grid_map_visualization" output="screen">
+       <rosparam command="load" file="$(find 
+       src_loc)/config/sensor_map.yaml" />
+    </node>
+
+    <node type="rviz" name="rviz_1" pkg="rviz" args="-d $(find src_loc)/rviz/rviz_mts_test.rviz" />
+    <node type="rviz" name="rviz_2" pkg="rviz" args="-d $(find src_loc)/rviz/rviz_mts_ortho_view.rviz" />
+
+    <node type="static_transform_publisher" pkg="tf" name="static_transform_publisher" output="screen" 
+        args=" 0 0 0 0 0 0 1 map my_frame 100"> </node>
+    
+
+</launch>

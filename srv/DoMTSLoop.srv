@@ -1,0 +1,5 @@
+float32 vel # velocity of the UAV.
+float32 turn_rate # constant turn-rate of the UAV.
+---
+float32 turn_rate # return the same turn-rate back.
+bool loop_termination # Status of loop termination.

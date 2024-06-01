@@ -1,0 +1,7 @@
+float32 theta_l # angle of gradient 
+---
+bool loop_termination # Status of loop termination.
+
+ 
+ 
+ 
