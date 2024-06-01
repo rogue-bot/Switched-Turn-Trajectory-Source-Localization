@@ -1,8 +1,0 @@
-prefix=/home/gnc001/catkin_ws/src/src_loc/build/devel
-
-Name: src_loc
-Description: Description of src_loc
-Version: 0.0.0
-Cflags: -I/home/gnc001/catkin_ws/src/src_loc/include
-Libs: -L${prefix}/lib -lsrc_loc
-Requires: rospy geometry_msgs mavros_msgs roscpp src_loc_msgs arva_sim roslaunch

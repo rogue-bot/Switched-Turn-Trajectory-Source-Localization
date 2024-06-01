@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: src_loc
-Description: Description of src_loc
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -lsrc_loc
-Requires: rospy geometry_msgs mavros_msgs roscpp src_loc_msgs arva_sim roslaunch
