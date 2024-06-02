@@ -1,0 +1,24 @@
+<launch>
+ 
+    
+    <arg name="namespace" default="MTS" />
+
+    <!-- <group ns="$(arg namespace)"> -->
+    
+
+    <rosparam file="$(find src_loc)/config/initialize.yaml" command="load" />
+
+    <node pkg="grid_map_visualization" type="grid_map_visualization" name="grid_map_visualization" output="screen">
+       <rosparam command="load" file="$(find 
+       src_loc)/config/sensor_map.yaml" />
+    </node>
+
+    <node type="rviz" name="rviz_1" pkg="rviz" args="-d $(find src_loc)/rviz/rviz_mts_test.rviz" />
+    <node type="rviz" name="rviz_2" pkg="rviz" args="-d $(find src_loc)/rviz/rviz_mts_ortho_view.rviz" />
+
+    <node type="static_transform_publisher" pkg="tf" name="static_transform_publisher" output="screen" 
+        args=" 0 0 0 0 0 0 1 map my_frame 100"> </node>
+
+    <!-- </group> -->
+
+</launch>

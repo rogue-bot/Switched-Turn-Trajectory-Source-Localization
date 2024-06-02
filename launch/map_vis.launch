@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="grid_map_visualization" type="grid_map_visualization" name="grid_map_visualization" output="screen">
+       <rosparam command="load" file="$(find 
+       src_loc)/config/sensor_map.yaml" />
+    </node>
+</launch>

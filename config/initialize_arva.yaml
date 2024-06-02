@@ -1,0 +1,52 @@
+### parameters to change
+# algo_num -> change algorithm to simulate
+# grad_est -> choose FDM and LSM estimation for gamts and gdts algos
+# noise_flag -> sensor noise
+# window_flag -> only for mts, gamts
+## "do not always change" max time -> change only for sliding mode and zig-zag since they take more time. 
+
+# mav parameters
+turn_rate: 20.0       # turn rate in deg/sec
+vel: 1                # velocity in m/s
+altitude: 5.0        # altitude of mav
+yaw_ini: 90           # initial yaw deg
+
+# Algorithms parameters
+algo_num: 4           # 1->MTS, 2->GAMTS, 3->GDTS, 4-> SM control, 5-> zig_zag, TRM(yet to be implemented)
+sample_N: 3           # sample of measurements for mts and gamts switching
+dataPts: 100
+del_thresh: 10        # delta angle threshold in deg for gdts
+max_time: 500.0       # 350 except for sliding mode
+
+## GAMTS parameters
+b: 0.5                # b parameter for gamts
+theta_l_ini: 90       # initial grad direction in deg
+
+## GDTS parameters
+grad_est: 2       # gradient estimation method 1->LSM, 2->FDM
+
+## Sliding mode control parameters
+v: 0.0000007 
+
+## zig-zag method parameters
+K1: 3
+K2: 4
+K3: 3
+tumble_dist: 2
+
+sin_traj_points: 1000 # number of sin trajectory points
+
+# Sensor parameters
+sensor_rate: 1        # sensor update rate
+filter_N: 5           # Window filter width
+pos_x_s:  20.0        # Source x co-ordinate
+pos_y_s: 20.0          # Source y co-ordinate 
+pos_z_s: 0            # Source x co-ordinate 
+Qmax: 0.0021          # Max vlaue of scalar field , [0,1,1] -> 0.0021, [1,1,0] -> 0.000091 , [0,0,1] -> 0.0019   
+sx: 75.0
+sy: 100.0
+sz: 10.0
+field_param: 3        # type of field 1 gauss, 2 quad, 3 for arva
+noise_flag: 1         # noise in measurement, 1 for noisy measurement
+window_flag: false     # To use window filter
+m: [0.0, 1.0, 1.0]
